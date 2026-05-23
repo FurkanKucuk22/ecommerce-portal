@@ -1,0 +1,70 @@
+package com.ecommerce.model;
+
+public class OrderItem {
+  private int id;
+  private int orderId;
+  private int productId;
+  private int quantity;
+  private double unitPrice;
+  private double subtotal;
+  private Product product;
+
+  public OrderItem() {
+  }
+
+  public int getId() {
+    return id;
+  }
+
+  public void setId(int id) {
+    this.id = id;
+  }
+
+  public int getOrderId() {
+    return orderId;
+  }
+
+  public void setOrderId(int orderId) {
+    this.orderId = orderId;
+  }
+
+  public int getProductId() {
+    return productId;
+  }
+
+  public void setProductId(int productId) {
+    this.productId = productId;
+  }
+
+  public int getQuantity() {
+    return quantity;
+  }
+
+  public void setQuantity(int quantity) {
+    this.quantity = quantity;
+  }
+
+  public double getUnitPrice() {
+    return unitPrice;
+  }
+
+  public void setUnitPrice(double unitPrice) {
+    this.unitPrice = unitPrice;
+  }
+
+  public double getSubtotal() {
+    return subtotal;
+  }
+
+  public void setSubtotal(double subtotal) {
+    this.subtotal = subtotal;
+  }
+
+  public Product getProduct() {
+    return product;
+  }
+
+  public void setProduct(Product product) {
+    this.product = product;
+  }
+}
