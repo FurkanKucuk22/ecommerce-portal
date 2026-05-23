@@ -1,4 +1,4 @@
-"""# 🛒 Java MVC ve JSTL ile Temel E-Ticaret Portalı - Kurulum Rehberi
+# 🛒 Java MVC ve JSTL ile Temel E-Ticaret Portalı - Kurulum Rehberi
 
 Bu proje, Java tabanlı Model-View-Controller (MVC) mimarisi standartlarına tam uyumlu olarak geliştirilmiş, dinamik, güvenli ve rol tabanlı (Müşteri/Yönetici) çalışan tam kapsamlı bir e-ticaret otomasyon sistemidir. Proje kapsamında veritabanı izolasyonu, sunucu taraflı form doğrulamaları ve şifre güvenliği sektör standartlarında uygulanmıştır.
 
