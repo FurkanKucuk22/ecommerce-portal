@@ -80,8 +80,6 @@ public class AdminProductServlet extends HttpServlet {
   private void listProducts(HttpServletRequest request, HttpServletResponse response)
       throws ServletException, IOException {
     List<Product> listProduct = productDAO.getAllProductsForAdmin();
-    // Arayüzde kategori isimlerini kolayca eşleştirebilmek için kategorileri de
-    // gönderiyoruz
     List<Category> listCategory = categoryDAO.getAllCategoriesForAdmin();
 
     request.setAttribute("listProduct", listProduct);
@@ -118,7 +116,7 @@ public class AdminProductServlet extends HttpServlet {
     String imageUrl = request.getParameter("imageUrl");
     boolean isActive = request.getParameter("isActive") != null;
 
-    // SUNUCU TARAFINDAN FORM DOĞRULAMA (Madde 6.4 ve Madde 11 İsteri)
+    // SUNUCU TARAFINDAN FORM DOĞRULAMA
     if (name == null || name.trim().isEmpty() || categoryIdStr == null || priceStr == null || stockStr == null) {
       sendValidationError(request, response, "Lütfen tüm zorunlu alanları doldurun!", "new", null);
       return;
