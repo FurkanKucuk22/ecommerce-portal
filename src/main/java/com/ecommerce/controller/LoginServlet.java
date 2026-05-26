@@ -24,6 +24,23 @@ public class LoginServlet extends HttpServlet {
   @Override
   protected void doGet(HttpServletRequest request, HttpServletResponse response)
       throws ServletException, IOException {
+
+    // --- ÇIKIŞ YAP (LOGOUT) İŞLEMİ KONTROLÜ ---
+    String action = request.getParameter("action");
+
+    if ("logout".equals(action)) {
+      // Mevcut oturumu bul (yoksa yenisini oluşturma)
+      HttpSession session = request.getSession(false);
+      if (session != null) {
+        // Oturumu sunucu belleğinden tamamen sil! (Kimlik kartını yak)
+        session.invalidate();
+      }
+      // Çıkış yapıldıktan sonra temiz bir şekilde login sayfasına yönlendir
+      response.sendRedirect(request.getContextPath() + "/login");
+      return; // Metodun aşağıya devam etmesini engelle
+    }
+
+    // Eğer çıkış yapma işlemi değilse, normal login sayfasını göster
     request.getRequestDispatcher("/login.jsp").forward(request, response);
   }
 
@@ -43,12 +60,10 @@ public class LoginServlet extends HttpServlet {
       return;
     }
 
-    // Kullanıcının formda girdiği şifreyi hash'le (Çünkü DB'deki hali hashlenmiş
-    // durumda)
+    // Kullanıcının formda girdiği şifreyi hash'le
     String hashedPassword = SecurityUtil.hashPassword(rawPassword);
 
-    // UserDAO içindeki login metodunu çağırıyoruz (Artık hashlenmiş şifreyi
-    // arıyoruz)
+    // UserDAO içindeki login metodunu çağırıyoruz
     User user = userDAO.loginUser(email, hashedPassword);
 
     if (user != null) {
