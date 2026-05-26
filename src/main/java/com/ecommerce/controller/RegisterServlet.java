@@ -59,7 +59,7 @@ public class RegisterServlet extends HttpServlet {
 
     // Yeni kullanıcı nesnesini oluştururken artık hashlenmiş şifreyi
     // (hashedPassword) veriyoruz
-    User newUser = new User(fullName, email, hashedPassword, phone, address, "USER");
+    User newUser = new User(fullName, email, hashedPassword, phone, address, "CUSTOMER");
 
     // Kayıt işlemini gerçekleştir
     boolean isRegistered = userDAO.registerUser(newUser);

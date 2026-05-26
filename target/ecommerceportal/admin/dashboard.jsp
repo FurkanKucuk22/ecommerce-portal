@@ -113,7 +113,6 @@
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
-    // Editör hata vermesin diye JSP etiketlerini tırnak içine alıp Number'a çeviriyoruz
     var totalProducts = Number("${stats.totalProducts != null ? stats.totalProducts : 0}");
     var totalCategories = Number("${stats.totalCategories != null ? stats.totalCategories : 0}");
     var totalUsers = Number("${stats.totalUsers != null ? stats.totalUsers : 0}");
